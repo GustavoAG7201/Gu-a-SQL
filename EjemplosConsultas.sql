@@ -52,62 +52,9 @@ SELECT departamento, COUNT(*) FROM empleados GROUP BY departamento HAVING COUNT(
 
 --* en este ejemplo muestra solo aquellos departamentos con mas de 5 empleados
 
---! JOIN
+--!  ******************** JOIN **********************
 -- todo: combina filas de dos o mas tablas en base a una columna en comun
 
--- ejemplo:
--- *se tiene dos tablas llamadas "empleados" y "departamentos"
-
---* 1. la tabla "empleados" contiene la informacion de los empeleados como su: id, nombre, departament_id
-
-+----+--------+-----------------+
-| id | nombre | departamento_id |
-+----+--------+-----------------+
-| 1  | Ana    | 1               |
-| 2  | Juan   | 2               |
-| 3  | Luis   | 1               |
-| 4  | Maria  | 3               |
-+----+--------+-----------------+
-
---* 2. la tabla "departamentos" contiene la infocmacion de los departamentos como su: id y nombre
-
-+----+-------------+
-| id | nombre      |
-+----+-------------+
-| 1  | Ventas      |
-| 2  | Marketing   |
-| 3  | Desarrollo  |
-+----+-------------+
-
-
---* el campo "departamento_id" que se encuentra en la tabla "empleados" es la llave foranea (FK) que permite 
---* relacionar la tabla "empleados" con la tabla "departamentos"
-
---! En este caso queremos conocer en que departamento trabaja cada uno de los empleados registrados
---* para conocer esto tenemos que combinar las tablas "empleados" y "departamentos" usando el JOIN
-
-
---Tipos de JOIN
-
---! 1. INNER JOIN
--- todo: muestra solo las filas que tienen coincidencias en ambas tablas
-
--- ejemplo:
-
-SELECT empleados.nombre, departamentos.nombre AS departamento 
-FROM empleados
-INNER JOIN departamentos ON empleados.departamento_id = departamentos.id;
-
--- Resultado:
-
-+--------+-------------+
-| nombre | departamento|
-+--------+-------------+
-| Ana    | Ventas      |
-| Juan   | Marketing   |
-| Luis   | Ventas      |
-| Maria  | Desarrollo  |
-+--------+-------------+
 
 
 
@@ -223,3 +170,14 @@ SELECT UCASE(nombre) AS NombreMayusculas FROM empleados;
 -- ejemplo: 
 
 SELECT LCASE(nombre) AS NombreMinusculas FROM empleados;
+
+
+
+--! TRIM
+-- todo: se usa para eliminar espacios en blanco al inicio y al final de una cadena de texto
+
+-- ejemplo:
+
+SELECT TRIM(nombre) AS NombreSinEspacios FROM empleados;
+
+--* en este ejemplo se eliminan los espacios en blanco que haya en la columna "nombre"

@@ -55,9 +55,30 @@ SELECT departamento, COUNT(*) FROM empleados GROUP BY departamento HAVING COUNT(
 --!  ******************** JOIN **********************
 -- todo: combina filas de dos o mas tablas en base a una columna en comun
 
+--! ~ ~ ~ ~ ~ ~ ~ ~ TIPOS DE JOIN  ~ ~ ~ ~ ~ ~ ~ ~
 
+-- !INNER JOIN
+-- todo: combina filas de ambas tablas donde hay coincidencias en las claves especificadas. Solo muestra las filas que cumplen la condicion de union.
 
+-- ejemplo1 de estructura:
 
+SELECT * FROM Tabla1
+INNER JOIN Tabla2 ON Tabla1.FK = Tabla2.PK
+
+-- ejemplo2 de estructura:
+
+SELECT Tabla1.nombre, Tabla2.nombre_departamento
+FROM Tabla1
+INNER JOIN Tabla2 ON Tabla1.departament_id = Tabla2.id_departamento;
+
+--* Explicacion de la Consulta
+
+-- *SELECT TABLA1.nombre, TABLA2.nombre_departamento: Aquí se especifican los campos que se desean recuperar de las tablas.
+-- * En este caso, se selecciona el nombre del empleado de TABLA 1 y el nombre del departamento de TABLA 2.
+-- *FROM TABLA1: Indica que la consulta comienza desde TABLA 1.
+-- *INNER JOIN TABLA2 ON TABLA1.departamento_id = TABLA2.id_departamento: 
+-- *Se realiza un INNER JOIN entre TABLA 1 y TABLA 2 utilizando la relación entre el campo departamento_id de TABLA 1 y el campo id_departamento de TABLA 2.
+-- * Esto asegura que solo se obtendrán los empleados que tienen un departamento asociado.
 
 --! INSERT INTO
 -- todo: inserta nuevos datos en una tabla 

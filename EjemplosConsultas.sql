@@ -103,6 +103,56 @@ SELECT DISTINCT departamento from empleados;
 --* en este ejemplo se muestran los departamentos unicos en la tabla "empleados"
 
 
+-- ! YEAR()
+-- todo: Se utiliza para extraer el año de una fecha dada
+
+-- ejemplo:
+
+YEAR(fecha);
+
+SELECT YEAR('2024-11-07') AS año;
+
+
+
+-- ! DATE()
+-- todo: Devuelve la fecha actual del sistema
+
+-- ejemplo:
+
+Date();
+
+SELECT Date() AS FechaActual;
+
+
+-- ! LEN()
+-- todo: se utiliza para obtener la longitud de una cadena de texto
+
+-- ejemplo:
+
+LEN(cadena);
+
+SELECT len('Hola Mundo') AS LongitudCadena;
+
+
+-- ! SQR()
+-- todo: calcula la raiz cuadrada de un numero
+
+-- ejemplo: 
+
+SQR(numero);
+
+SELECT SQR(16) AS RaizCuadrada;
+
+
+
+-- ! ROUND()
+-- todo: se utiliza para redondear un numero a un numero especifico de decimales
+
+-- ejemplo:
+
+ROUND(numero, cantidad de decimales);
+
+SELECT ROUND(campo  , 2) AS NumeroRedondeado;
 
 -- ! *****FUNCIONES DE AGREGADO (realizar calculos sobre un conjunto de datos)******
 

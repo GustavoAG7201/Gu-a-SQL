@@ -134,6 +134,30 @@ LEN(cadena);
 SELECT len('Hola Mundo') AS LongitudCadena;
 
 
+-- ! NOW()
+-- todo: se utiliza para obtener la fecha y hora actuales del sistema. Util cuando necesitas registrar fecha y hora como al crear un registro.
+
+-- ejemplo:
+
+SELECT NOW() AS FechaHoraActual();
+
+
+-- ! MONTH()
+-- todo: devuelve el numero de mes de una fecha especifica, devuelve un valor numerico del 1 al 12
+
+-- ejemplo: 
+
+SELECT MONTH(FechaNacimiento) AS MesNacimiento
+FROM empleados;
+
+-- ! MID()
+-- todo: se utiliza para extraer una subcadena de texto, especifica la posicion inicial y la longitud a extraer de la subcadena
+
+-- ejemplo:
+
+SELECT MID(NombreCompleto, 1, 5) AS PrimerosCincoCaracteres
+FROM empleados;
+
 -- ! SQR()
 -- todo: calcula la raiz cuadrada de un numero
 
@@ -309,4 +333,16 @@ SELECT TABLA1.nombre, TABLA2.nombre_departamento
 FROM TABLA1
 CROSS JOIN TABLA2;
 
+
+-- ! ********** S U B     C O N S U L T A S ********************
+
+-- todo: es una consulta dentro de otra, se usa para realizar operaciones mas complejas como filtrar resultados basados en los resultados de otra
+
+-- ejemplo: 
+
+SELECT nombre, salario
+FROM empleados
+WHERE salario > (SELECT AVG(salario) FROM empleados);
+
+-- *En este ejemplo se seleccionan los nombres y salarios de los empleados cuyo salario sea mayor al salario primedio de todos los empleados
 

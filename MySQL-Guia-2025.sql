@@ -4,7 +4,7 @@ USE prueba;
 
 -- Crear una tabla con restricciones
 CREATE TABLE roles (
-    id_rol INT PRIMARY KEY AUTO_INCREMENT,  -- Clave primaria autoincremental
+    id_rol INT unsigned PRIMARY KEY AUTO_INCREMENT,  -- Clave primaria autoincremental
     nombre_rol VARCHAR(50) UNIQUE,         -- Valor único
     turno VARCHAR(20) NOT NULL,            -- No acepta valores nulos
     cp VARCHAR(6) DEFAULT '88000',         -- Valor por defecto

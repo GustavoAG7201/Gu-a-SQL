@@ -333,3 +333,36 @@ SET columna1 = 'nuevo_valor1',
 WHERE id = 1;
 
 
+
+--******************  F   E   C    H    A    S   **************************
+
+--Diferencia de fechas
+SELECT DATEDIFF('2025-03-10', '2025-03-01') AS diferencia_dias;
+
+--Devuelve el año de una fecha
+SELECT YEAR('2025-03-05') AS anio;
+
+--Devolver el numero de semana del año en que cae la fecha
+SELECT WEEK('2025-03-05') AS semana;
+
+--Diferencia entre dos horas en formato HH:MM:SS
+SELECT TIMEDIFF('15:30:00', '12:15:00');
+
+--Devolver la fecha y la hora actual el sistema
+SELECT NOW() AS fecha_actual;
+
+--Eliminar duplicados en los resultados de una consulta
+SELECT DISTINCT nombre_rol from roles;
+--*Muestra solo los valores unicos en la tabla rol
+
+SELECT DATE_FORMAT(NOW(), '%d/%m/%Y') AS fecha_ddmmyyyy;
+-- Resultado: "05/03/2025"
+
+
+--******************  C   O   N   D   I   C   I   O   N   A   L   E   S  (   IF    )  **************************
+IF(condición, valor_si_verdadero, valor_si_falso)
+
+
+
+--******************  P   R   O    C     E      D     M     I      E      N       T     O     S  **************************
+
